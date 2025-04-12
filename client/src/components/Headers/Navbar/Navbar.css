@@ -1,0 +1,11 @@
+.navigation-bar {
+  display: flex;
+  gap: 170px;
+  align-items: center;
+  justify-content: center;
+  color: dodgerblue;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
