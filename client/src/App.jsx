@@ -1,14 +1,16 @@
-import { useState } from 'react'
 import './App.css'
+import SectionAbout from './components/AboutMe/SectionAbout'
 import Header from './components/Headers/Header'
+import SectionMain from './components/MainBody/SectionMain'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header/>
+      <Header />
+      <SectionMain />
+      <SectionAbout />
     </>
   )
 }

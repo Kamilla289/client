@@ -1,11 +1,12 @@
 .navigation-bar {
   display: flex;
-  gap: 170px;
+  gap: 134px;
   align-items: center;
-  justify-content: center;
-  color: dodgerblue;
-  font-weight: 400;
-  font-size: 20px;
+  justify-content: space-between;
+  color: #004687;
+  font-weight: 500;
+  font-size: 24px;
   background-color: rgb(255, 255, 255);
   height: 100px;
+  margin: 0 256px 0 256px;
 }

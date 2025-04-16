@@ -1,0 +1,30 @@
+.img-photo {
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+}
+
+.about-me-block {
+  display: flex;
+  justify-content: center;
+}
+
+.about-me-description {
+  font-size: 24px;
+  font-weight: 300;
+  color: #424d62;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #002c7e;
+}
+
+.block-about-text {
+  flex: 1;
+}
+
+.slurry-block {
+  flex: 1;
+}
