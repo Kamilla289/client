@@ -18,13 +18,32 @@
 h2 {
   font-size: 60px;
   font-weight: 800;
-  color: #002c7e;
+  color: #6667ca;
 }
 
 .block-about-text {
   flex: 1;
 }
 
-.slurry-block {
+.test5 {
   flex: 1;
+  height: 60vh;
+}
+
+.slurry-about {
+  height: 614px;
+}
+
+.block-about {
+  margin-left: 265px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.title-about {
+  margin-bottom: 67px;
+}
+
+.description-goal {
+  margin-top: 45px;
 }

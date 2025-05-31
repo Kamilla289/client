@@ -2,32 +2,32 @@ const navbar = [
   {
     id: 1,
     name: 'Главная',
-    path: '/'
+    path: 'main'
   },
   {
     id: 2,
     name: 'Обо мне',
-    path: '/about'
+    path: 'about'
   },
   {
     id: 3,
     name: 'Навыки',
-    path: '/skill'
+    path: 'skill'
   },
   {
     id: 4,
     name: 'Этапы работы',
-    path: '/work'
+    path: 'work'
   },
   {
     id: 5,
     name: 'Демонстрация',
-    path: '/demo'
+    path: '/abilities'
   },
   {
     id: 6,
     name: 'Контакты',
-    path: '/contacts'
+    path: 'contacts'
   }
 ]
 

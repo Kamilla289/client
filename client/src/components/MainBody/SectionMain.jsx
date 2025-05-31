@@ -2,15 +2,18 @@ import React from 'react'
 import Motive from './Motive'
 import Test from './Test'
 import Sector from '../Desing/Sector'
+import { Element } from 'react-scroll'
 
 const SectionMain = () => {
   return (
-    <Sector>
+    <Element id='main'>
+      <Sector noneUp>
 
-      <Motive />
+        <Motive />
 
-      <Test />
-    </Sector>
+        <Test />
+      </Sector>
+    </Element>
   )
 }
 

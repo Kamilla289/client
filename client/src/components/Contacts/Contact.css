@@ -1,0 +1,74 @@
+.text-policy {
+  display: flex;
+  font-weight: 400;
+  color: #6667ca;
+  font-size: 20px;
+  gap: 8px;
+}
+
+.link-text {
+  color: #c566ca;
+  text-decoration: underline;
+}
+
+.input-form {
+  width: 600px;
+  height: 45px;
+  border: 1px solid #6667ca;
+  border-radius: 13px;
+  padding: 8px 0 8px 30px;
+}
+
+.input-form:focus {
+  outline: #aa66ca 1px solid;
+}
+
+.input-form::placeholder {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.contact-frame {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 11px;
+}
+
+.policy {
+  display: flex;
+  gap: 22px;
+}
+
+.checkbox {
+  width: 45px;
+}
+
+.button-gradient {
+  width: 280px;
+  height: 65px;
+  background: linear-gradient(217deg, #aa66ca, rgb(255 100 100 / 0) 70.71%),
+    linear-gradient(
+      149deg,
+      rgba(85, 23, 219, 0.8),
+      rgb(100, 162, 255, 0.5) 70.71%
+    ),
+    linear-gradient(336deg, #6667ca, rgba(184, 100, 252, 1) 70.71%);
+  border-radius: 13px;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.contact-frame {
+  margin-bottom: 30px;
+}
+
+.contacts-block {
+  margin-top: 93px;
+}
+
+.title-contacts {
+  font-size: 80px;
+}

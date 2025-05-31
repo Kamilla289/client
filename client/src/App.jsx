@@ -1,8 +1,10 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import SectionAbout from './components/AboutMe/SectionAbout'
+import Home from './components/Home/Home'
+import Footer from './components/Footer/Footer'
 import Header from './components/Headers/Header'
-import SectionMain from './components/MainBody/SectionMain'
-import Skills from './components/Skills/Skills'
+import Ability from './components/Ability/Ability'
+
 
 
 function App() {
@@ -10,9 +12,10 @@ function App() {
   return (
     <>
       <Header />
-      <SectionMain />
-      <SectionAbout />
-      <Skills />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/abilities' element={<Ability />} />
+      </Routes>
     </>
   )
 }

@@ -1,23 +1,23 @@
 import React from 'react'
 import { aboutMe } from '../../data/AboutMe';
+import { Element } from 'react-scroll'
 import './About.css'
 
 const About = () => {
+  const { title, text1, text2 } = aboutMe
+
   return (
-    <div className="block-about-text">
+    <Element name='about' className="block-about-text">
       <div >
-        {aboutMe.map((item) => {
-          return (
-            <div key={item.id} className='block-about'>
-              <div className="about-me-description">
-                <h2>{item.title}</h2>
-                {item.text}
-              </div>
-            </div>
-          );
-        })}
+        <div className='block-about'>
+          <div className="about-me-description">
+            <h2 className='title-about'>{title}</h2>
+            <p>{text1}</p>
+            <p className='description-goal'>{text2}</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </Element>
   )
 }
 
