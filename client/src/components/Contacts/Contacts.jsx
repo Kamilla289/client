@@ -14,7 +14,7 @@ const Contacts = () => {
 
 
   return (
-    <Element name='contacts'>
+    <Element name='contacts' id='contacts'>
       <Sector noFlex none>
         <h2 className='title-contacts'>СВЯЖИТЕСЬ СО МНОЙ</h2>
         <div className="contacts-block">

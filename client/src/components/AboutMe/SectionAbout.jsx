@@ -6,7 +6,7 @@ import Sector from '../Desing/Sector'
 const SectionAbout = () => {
   return (
     <div>
-      <Sector>
+      <Sector to='skill'>
         <Graphic />
         <About />
       </Sector>

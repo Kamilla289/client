@@ -7,7 +7,7 @@ import { Element } from 'react-scroll'
 const SectionMain = () => {
   return (
     <Element id='main'>
-      <Sector noneUp>
+      <Sector noneUp to='about'>
 
         <Motive />
 

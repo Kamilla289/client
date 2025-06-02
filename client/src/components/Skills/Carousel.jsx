@@ -14,6 +14,7 @@ import SquareBack from '../../assets/image/slider/square-back.png'
 import RectBack1 from '../../assets/image/slider/rect-back-1.png'
 import RectBack2 from '../../assets/image/slider/rect-back-2.png'
 import './Carousel.css';
+import { Element } from 'react-scroll';
 
 const skills = [
   {
@@ -137,37 +138,39 @@ const Carousel = () => {
   }, []);
 
   return (
-    <Sector>
-      <div className="slider">
-        <h2 className='tech-title'>MY STACK TECHNOLOGY</h2>
-        <div className="slider-main">
-          <button onClick={handlePrev} className="slider-prev">
-            <img src={ArrowP} alt="Previous" className="prev" />
-          </button>
-          <div key={index} className={`slider-block ${fade ? 'fadeIn' : 'fadeOut'}`}>
-            <div className="mraz">
+    <Element name='skill'>
+      <Sector>
+        <div className="slider">
+          <h2 className='tech-title'>MY STACK TECHNOLOGY</h2>
+          <div className="slider-main">
+            <button onClick={handlePrev} className="slider-prev">
+              <img src={ArrowP} alt="Previous" className="prev" />
+            </button>
+            <div key={index} className={`slider-block ${fade ? 'fadeIn' : 'fadeOut'}`}>
+              <div className="mraz">
 
-              <img src={whiteImage} alt="" className="white-back" />
+                <img src={whiteImage} alt="" className="white-back" />
 
-              <img src={image} alt="" className="carousel-image" />
-            </div>
+                <img src={image} alt="" className="carousel-image" />
+              </div>
 
-            <div className="right-description">
-              <h3 className="slider-title">{title}</h3>
-              <p className="slider-text">{text}</p>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${animateLevel}%` }}>
-                  {animateLevel}%
+              <div className="right-description">
+                <h3 className="slider-title">{title}</h3>
+                <p className="slider-text">{text}</p>
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{ width: `${animateLevel}%` }}>
+                    {animateLevel}%
+                  </div>
                 </div>
               </div>
             </div>
+            <button onClick={handleNext} className="slider-next">
+              <img src={ArrowN} alt="Next" className="next" />
+            </button>
           </div>
-          <button onClick={handleNext} className="slider-next">
-            <img src={ArrowN} alt="Next" className="next" />
-          </button>
         </div>
-      </div>
-    </Sector>
+      </Sector>
+    </Element>
   );
 };
 

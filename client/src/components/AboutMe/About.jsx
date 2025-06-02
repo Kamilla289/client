@@ -7,7 +7,7 @@ const About = () => {
   const { title, text1, text2 } = aboutMe
 
   return (
-    <Element name='about' className="block-about-text">
+    <Element name='about' id='about' className="block-about-text" >
       <div >
         <div className='block-about'>
           <div className="about-me-description">
