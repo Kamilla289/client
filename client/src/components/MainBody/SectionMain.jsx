@@ -8,10 +8,12 @@ const SectionMain = () => {
   return (
     <Element id='main'>
       <Sector noneUp to='about'>
+        <div className="mraz1" style={{ display: 'flex' }}>
 
-        <Motive />
+          <Motive />
 
-        <Test />
+          <Test />
+        </div>
       </Sector>
     </Element>
   )

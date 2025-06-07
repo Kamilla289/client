@@ -5,13 +5,12 @@ import { Link } from 'react-scroll';
 import '../MainBody/SectionMain.css';
 
 const StyledSector = styled.div`
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 100px 256px 66px 256px;
+  height: 100vh;
+  padding: 2rem;
+  color: white;
   display: flex;
-  position: relative;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Sector = ({ children, noFlex, hideArrow, to }) => {
