@@ -23,10 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <Element name='main'>
-        <SectionMain />
-      </Element>
-
+      <SectionMain />
       <SectionAbout />
       <Carousel />
       <Contacts />

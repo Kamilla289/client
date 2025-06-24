@@ -6,14 +6,14 @@ import { Element } from 'react-scroll'
 
 const SectionMain = () => {
   return (
-    <Element id='main'>
+    <Element id='main' className='main-mraz'>
       <Sector noneUp to='about'>
-        <div className="mraz1" style={{ display: 'flex' }}>
 
-          <Motive />
 
-          <Test />
-        </div>
+        <Motive />
+
+        <Test />
+
       </Sector>
     </Element>
   )

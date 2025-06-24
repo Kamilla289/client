@@ -7,3 +7,20 @@
   background: none;
   font-family: "Montserrat", sans-serif;
 }
+
+.main-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slurry-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-image: url(./assets/image/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
