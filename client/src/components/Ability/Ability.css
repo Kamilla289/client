@@ -1,0 +1,87 @@
+/* * {
+  border: .0625rem solid black;
+} */
+
+.ability-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 73%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-block-ability {
+  margin-top: 13%;
+  margin-bottom: 12.0625rem;
+  width: 79.375rem;
+  position: relative;
+}
+
+.ability-title {
+  margin-bottom: 5.625rem;
+}
+
+.text-ability {
+  color: #424d62;
+  font-size: 3rem;
+  font-weight: 600;
+  width: 67.6875rem;
+}
+
+.image-ability {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 14.0625rem;
+}
+
+.link-block-ability {
+  width: 100%;
+}
+
+.item-ability {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 30px;
+  padding-left: 90px;
+  margin-bottom: 63px;
+}
+
+.title-item {
+  font-size: 48px;
+  margin-bottom: 26px;
+}
+
+.text-item {
+  font-size: 24px;
+  color: #585858;
+  width: 80%;
+}
+
+.image-item {
+  width: 100%;
+}
+
+.item-ability:hover {
+  box-shadow: 0 0 0 4px #6667ca;
+  transition: box-shadow 0.5s;
+}
+
+.button-gradient {
+  transition: transform 0.3s ease;
+}
+
+.button-gradient:hover {
+  cursor: pointer;
+  transform: scale(1.07); /* примерно +7% к размеру */
+}
+
+.text-resum {
+  font-size: 24px;
+  color: #6667ca;
+}

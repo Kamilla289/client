@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: space-between;
   color: #6667ca;
+  transition: text-shadow 0.3s;
   font-weight: 500;
   z-index: 10000;
   height: 100%; /* занять всю высоту навигации */
@@ -27,6 +28,10 @@
 .link {
   color: #6667ca;
   cursor: pointer;
+}
+
+.link:hover {
+  text-shadow: 0 0 1px currentColor;
 }
 
 #wave-effect {

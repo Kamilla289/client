@@ -76,7 +76,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
   const columns = validChildren.length >= 2 ? 2 : 1;
 
   return (
-    <StyledSector style={{ height: noHeight ? '100%' : '100vh' }}>
+    <StyledSector style={{ height: noHeight ? '100%' : '90vh' }}>
       <ContentWrapper columns={columns}>
         {validChildren}
       </ContentWrapper>
