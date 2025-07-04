@@ -1,48 +1,9 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import Arrow from '../../assets/image/Arrow.svg';
-// import { Link } from 'react-scroll';
-// import '../MainBody/SectionMain.css';
-
-// const StyledSector = styled.div`
-//   height: 100vh;
-//   padding: 2rem;
-//   color: white;
-//   display: grid;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   grid-template-rows: repeat(2, 1fr);
-// 	grid-template-columns: repeat(2, 1fr);
-// `;
-
-// const Sector = ({ children, noGrid, hideArrow, to, noHeight }) => {
-//   return (
-//     <StyledSector style={{ display: noGrid ? 'grid' : 'block', height: noHeight ? '100vh' : '' }}>
-//       {children}
-
-//       {/* Кнопка со стрелкой вниз — ведёт к следующей секции, если указан to */}
-//       {to && !hideArrow && (
-//         <Link to={to} smooth={true} duration={500}>
-//           <img
-//             className="arrow"
-//             src={Arrow}
-//             alt="Клацай вниз"
-//             style={{ display: 'block' }}
-//           />
-//         </Link>
-//       )}
-//     </StyledSector>
-//   );
-// };
-
-// export default Sector;
-
 import React from 'react';
 import styled from 'styled-components';
 import Arrow from '../../assets/image/Arrow.svg';
 import { Link } from 'react-scroll';
 import '../MainBody/SectionMain.css';
+import './Scroll.css'
 
 const StyledSector = styled.div`
   height: 100vh;

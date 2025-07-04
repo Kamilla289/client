@@ -5,21 +5,24 @@ import post from '../assets/image/contactsImage/post.svg'
 
 export const contactsForm = [
   {
-    id: 1,
+    index: 1,
+    id: 'name',
     icon: name,
-    placeholder: 'Фамилия, имя',
+    placeholder: 'Фамилия, имя (Обязательно)',
     type: 'text'
   },
   {
-    id: 2,
+    index: 2,
+    id: 'email',
     icon: post,
-    placeholder: 'Электронная почта',
+    placeholder: 'Электронная почта (Обязательно)',
     type: 'email'
   },
   {
-    id: 3,
+    index: 3,
+    id: 'tel',
     icon: mobile,
-    placeholder: 'Номер телефона',
+    placeholder: 'Номер телефона (Обязательно)',
     type: 'tel'
   }
 ]

@@ -1,5 +1,12 @@
 .arrow-up {
   position: fixed;
+  right: 100px;
+  bottom: 100px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.arrow {
   cursor: pointer;
 }
 
@@ -23,6 +30,7 @@
   }
 }
 
-.arrow-up:hover {
+.arrow-up:hover,
+.arrow:hover {
   animation: bounce 1s;
 }

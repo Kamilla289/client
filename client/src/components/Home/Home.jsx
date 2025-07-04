@@ -1,35 +1,38 @@
-import React from 'react'
-import SectionMain from '../MainBody/SectionMain'
-import SectionAbout from '../AboutMe/SectionAbout'
-import Contacts from '../Contacts/Contacts'
-import Carousel from '../Skills/Carousel'
-import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import { Element } from 'react-scroll'
-import Footer from '../Footer/Footer'
+import React, { useEffect } from 'react';
+import SectionMain from '../MainBody/SectionMain';
+import SectionAbout from '../AboutMe/SectionAbout';
+import Contacts from '../Contacts/Contacts';
+import Carousel from '../Skills/Carousel';
+import Footer from '../Footer/Footer';
+import { useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 
 const Home = () => {
   const location = useLocation();
+
   useEffect(() => {
-    if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1))
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }, 100)
-      }
+    const scrollTo = location.state?.scrollTo;
+    if (scrollTo) {
+      setTimeout(() => {
+        scroller.scrollTo(scrollTo, {
+          duration: 800,
+          delay: 0,
+          smooth: 'easeInOutQuart',
+          offset: -50,
+        });
+      }, 100);
     }
-  }, [location])
+  }, [location]);
 
   return (
-    <>
+    <div showNone>
       <SectionMain />
       <SectionAbout />
       <Carousel />
       <Contacts />
       <Footer />
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

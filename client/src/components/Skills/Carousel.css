@@ -10,11 +10,11 @@
 
 .progress-fill {
   height: 100%;
-  background-color: #c566ca;
+  background-color: #ceff93;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #454a1f;
   font-weight: bold;
   border-radius: 13px;
   transition: width 0.5s linear;
@@ -43,19 +43,14 @@
   align-items: center;
   width: 1120px;
   height: 460px;
-  background: linear-gradient(217deg, #aa66ca, rgb(255 100 100 / 0) 70.71%),
-    linear-gradient(
-      149deg,
-      rgba(85, 23, 219, 0.8),
-      rgb(100, 162, 255, 0.5) 70.71%
-    ),
-    linear-gradient(336deg, #6667ca, rgba(184, 100, 252, 1) 70.71%);
+  background-color: #ffafc1;
   border-radius: 30px;
   position: relative;
 }
 
 .white-back {
   filter: blur(80px);
+  opacity: 0.6;
 }
 
 .carousel-image {
@@ -76,7 +71,7 @@
   align-items: center;
   flex: 0.6;
   width: 488px;
-  background-color: #6d4392;
+  background-color: #a3e0ff;
   border-radius: 36px;
   padding: 30px 25px;
   margin-right: 47px;
@@ -85,13 +80,13 @@
 
 .slider-title {
   font-weight: 900;
-  color: white;
+  color: #236383;
   font-size: 55px;
 }
 
 .slider-text {
   font-weight: 300;
-  color: white;
+  color: #236383;
   font-size: 20px;
   text-align: center;
   margin-top: 41px;

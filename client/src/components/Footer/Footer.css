@@ -10,18 +10,31 @@
   gap: 336px;
 }
 
+.footer-mraz {
+  position: relative;
+}
+
+.blur-image {
+  position: absolute;
+  left: 6%;
+  bottom: 2.6875rem;
+  filter: blur(50px);
+  transform: scale(1.2);
+  z-index: -10000;
+}
+
 address,
 .email,
 .phone {
   font-style: normal;
-  color: #6667ca;
+  color: #ffafc1;
   font-weight: 300;
   font-size: 20px;
 }
 
 .email:hover,
 .phone:hover {
-  color: blueviolet;
+  color: #ff6b8b;
 }
 
 .copyright,
@@ -37,7 +50,7 @@ address,
 }
 
 .social-title {
-  color: #6667ca;
+  color: #ff6b8b;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 13px;

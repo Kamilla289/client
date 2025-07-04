@@ -3,12 +3,13 @@ import Sector from '../Desing/Sector'
 import { footerData } from '../../data/footerData'
 import './Footer.css'
 import Heart from '../../assets/image/heart.png'
+import Blur from '../../assets/image/bac.png'
 
 const Footer = ({ noneImage }) => {
   const { contacts, copyright, design, social } = footerData
 
   return (
-    <div className="main-mraz">
+    <div className="main-mraz footer-mraz">
       <Sector noHeight noneUp>
         <div className="footer-block-mraz">
           <div className="line"></div>
@@ -42,6 +43,7 @@ const Footer = ({ noneImage }) => {
           </div>
         </div>
       </Sector>
+      <img className='blur-image' src={Blur} alt="" />
     </div>
   )
 }

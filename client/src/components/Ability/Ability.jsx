@@ -7,7 +7,7 @@ import '../Ability/Ability.css'
 const Ability = () => {
   const { header, demo } = abilityData
   return (
-    <div>
+    <div showNone>
       <div className="ability-block">
         <div className="header-block-ability">
           <h1 className="ability-title">{header.title}</h1>

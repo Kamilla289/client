@@ -1,30 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import ArrowUp from '../../assets/image/ArrowUp.svg'
-import './Scroll.css'
+import React, { useEffect, useState } from 'react';
+import ArrowUp from '../../assets/image/ArrowUp.svg';
+import './Scroll.css';
 import { Link } from 'react-scroll';
+import { useLocation } from 'react-router-dom';
 
 const ScrollTopButton = () => {
+  const [show, setShow] = useState(false);
+  const location = useLocation();
 
-  const [show, setshow] = useState(false);
   useEffect(() => {
-    const HandleScroll = () => {
-      const About = document.getElementById('about');
-      if (!About) return;
-      const rect = About.getBoundingClientRect();
-      setshow(rect.top <= 0);
-    };
-    window.addEventListener('scroll', HandleScroll);
-    HandleScroll();
-    return () => window.removeEventListener('scroll', HandleScroll)
-  }, []);
+    if (location.pathname !== '/') return;
 
-  if (!show) return null;
+    const handleScroll = () => {
+      setShow(window.scrollY > 200);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
+  if (location.pathname !== '/' || !show) return null;
 
   return (
     <Link to='main' smooth={true} duration={500}>
       <img className='arrow-up' src={ArrowUp} alt="Клацай вверх" />
     </Link>
-  )
-}
+  );
+};
 
-export default ScrollTopButton
+export default ScrollTopButton;
