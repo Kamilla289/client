@@ -5,6 +5,7 @@
   font-size: 24px;
   overflow: hidden;
   transition: height 0.3s ease, font-size 0.3s ease; /* уменьшил время для более плавной анимации */
+  z-index: 100000;
 }
 
 .navigation.small {
@@ -19,7 +20,7 @@
   color: #6667ca;
   transition: text-shadow 0.3s;
   font-weight: 500;
-  z-index: 10000;
+  z-index: 100000;
   height: 100%; /* занять всю высоту навигации */
   width: 73%;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 import Sector from '../Desing/Sector'
 import { contactsForm } from '../../data/contactsForm'
 import BasicModal from '../Desing/ModalPolicy'
@@ -32,9 +33,37 @@ const Contacts = () => {
     }))
   }
 
-  const handleSubmit = () => {
-    alert('форма отправлена');
+  const handleSubmit = async () => {
+    let text = '<b>Новая заявка сайта</b>\n';
+    contactsForm.forEach((field) => {
+      const value = inputSubmit[field.index] || "-";
+      text += `<b>${field.placeholder}</b> : ${value}\n`
+    });
+    const messageValue = document.getElementById('message').value || '-';
+    text += `<b>Сообщение</b> : ${messageValue}\n`;
+    try {
+      await sendTelegram(text);
+      alert('Форма отправлена');
+      setInputSubmit({});
+      document.getElementById('message').value = '';
+      setIsChecked(false);
+    } catch (error) {
+      console.error(error)
+      alert('пошел нахуй');
+    }
   };
+
+  const sendTelegram = async (message) => {
+    const token = '7757955888:AAFeVcPbVtOIESbGRgvCC9_g6xnRhtsfTqk';
+    const id = '1692857185';
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    await axios.post(url, {
+      chat_id: id,
+      text: message,
+      parse_mode: 'HTML',
+
+    })
+  }
 
   return (
     <Element name='contacts' id='contacts' className='main-mraz'>

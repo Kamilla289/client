@@ -3,6 +3,8 @@ import Motive from './Motive'
 import Test from './Test'
 import Sector from '../Desing/Sector'
 import { Element } from 'react-scroll'
+import Model from './Model'
+import { Canvas } from '@react-three/fiber'
 
 const SectionMain = () => {
   return (
@@ -12,7 +14,12 @@ const SectionMain = () => {
 
         <Motive />
 
-        <Test />
+        <Canvas camera={{ position: [0, 0, 2] }}>
+          <ambientLight intensity={3.5} />
+          <directionalLight position={[100, 10, 50]} />
+          <Model />
+        </Canvas>
+
 
       </Sector>
     </Element>
