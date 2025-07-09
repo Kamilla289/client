@@ -14,14 +14,18 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.0.2",
     "@react-spring/three": "^10.0.1",
-    "@react-three/drei": "^10.4.2",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/drei": "^10.4.4",
+    "@react-three/fiber": "^9.2.0",
     "axios": "^1.10.0",
-    "framer-motion": "^12.12.1",
+    "framer-motion": "^12.23.0",
+    "maath": "^0.10.8",
     "react": "^19.0.0",
+    "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
     "react-scroll": "^1.9.3",
-    "styled-components": "^6.1.17"
+    "styled-components": "^6.1.17",
+    "three": "^0.178.0",
+    "valtio": "^2.1.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

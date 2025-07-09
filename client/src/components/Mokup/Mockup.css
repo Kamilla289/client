@@ -1,0 +1,31 @@
+.window-mockup {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 10;
+}
+
+.mockup-container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.go-back {
+  position: absolute;
+  z-index: 10;
+  top: 5px;
+  right: 5px;
+}
+
+.button-go-back {
+  margin-top: 0;
+}
+
+.filtertabs-container {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
