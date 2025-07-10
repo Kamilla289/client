@@ -38,3 +38,10 @@ h1 {
 .slurry-steps {
   position: absolute;
 }
+
+.dark h1 {
+  color: #ffafc1;
+}
+.dark .text-block {
+  color: #a3e0ff;
+}

@@ -24,3 +24,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+body.dark {
+  background-image: url(./assets/image/background-dark.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

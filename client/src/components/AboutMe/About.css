@@ -47,3 +47,11 @@ h2 {
 .description-goal {
   margin-top: 45px;
 }
+
+.dark .about-me-description {
+  color: #ceff93;
+}
+
+.dark h2 {
+  color: #ffafc1;
+}

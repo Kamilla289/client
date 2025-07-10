@@ -30,6 +30,10 @@
   cursor: pointer;
 }
 
+.dark .link {
+  color: #ffafc1;
+}
+
 .link:hover {
   text-shadow: 0 0 1px currentColor;
 }

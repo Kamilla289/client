@@ -19,13 +19,102 @@
 }
 
 .button-go-back {
-  margin-top: 0;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .filtertabs-container {
   display: flex;
   position: absolute;
   bottom: 20px;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
+  gap: 20px;
+}
+
+.editortabs-container,
+.filter-tab-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filter-tab-btn,
+.tab-btn {
+  border-radius: 9999px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.filter-tab-btn-icon {
+  object-fit: contain;
+}
+
+.colorpicker-container {
+  position: absolute;
+  margin-left: 120%;
+  left: 0;
+}
+
+.sketch-picker {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.filepicker-container {
+  position: absolute;
+  left: 100%;
+  margin-left: 0.75rem;
+  padding: 0.75rem;
+  width: 195px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.375rem;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.filepicker-label {
+  border: 1px solid #d1d5db;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.75rem;
+  color: #374151;
+  outline: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.filepicker-label:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
 }

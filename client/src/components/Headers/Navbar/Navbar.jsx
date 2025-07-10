@@ -3,11 +3,13 @@ import NavbarLink from '../../../data/navbar';
 import { Link as ScrollLink } from 'react-scroll';
 import './Navbar.css';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+import { useTheme } from '../../Desing/Themes/ThemeContext';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,6 +106,11 @@ const Navbar = () => {
             <stop offset="0%" stopColor="#CEFF93" />
             <stop offset="100%" stopColor="#CEFF93" />
           </linearGradient>
+
+          <linearGradient id="customGradientDark" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#723A8E" />
+            <stop offset="100%" stopColor="#723A8E" />
+          </linearGradient>
           <path
             id="gentle-wave"
             d="M-160 44c30 0 
@@ -115,7 +122,7 @@ const Navbar = () => {
           />
         </defs>
         <g className="parallax">
-          <use xlinkHref="#gentle-wave" x="50" y="-10" fill="url(#customGradient)" stroke="#CEFF93" stroke-width="2" />
+          <use xlinkHref="#gentle-wave" x="50" y="-10" fill={theme === 'dark' ? 'url(#customGradientDark)' : 'url(#customGradient)'} />
         </g>
       </svg>
     </div>

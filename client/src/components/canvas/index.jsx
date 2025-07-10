@@ -17,11 +17,7 @@ const CanvasModel = () => {
       <Environment preset="city" />
 
       <CameraRig>
-        <Center>
-          <group position={[-0.4, 0, 0]}>
-            <Shirt />
-          </group>
-        </Center>
+        <Shirt />
       </CameraRig>
     </Canvas>
   )

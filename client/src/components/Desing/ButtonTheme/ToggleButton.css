@@ -1,0 +1,118 @@
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 50%);
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.76, 0.05, 0.24, 0.95);
+  --trans-timing-in: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  --trans-timing-out: cubic-bezier(0.05, 0.76, 0.06, 0.86);
+}
+
+input {
+  color: var(--fg);
+}
+
+body {
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.switch {
+  position: fixed;
+  top: 12px;
+  left: 40px;
+  width: 120px;
+  height: 60px;
+  z-index: 111000;
+  cursor: pointer;
+  margin: 0;
+}
+
+.switch__input {
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  background-color: hsl(210, 90%, 70%);
+  opacity: 0.4;
+  border-radius: 30px;
+  position: relative;
+  outline: none;
+  transition: background-color var(--trans-dur) var(--trans-timing);
+  box-shadow: 0 0 0 0.125em hsla(var(--hue), 90%, 50%, 0),
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+}
+
+.switch__input:focus-visible {
+  box-shadow: 0 0 0 0.125em hsl(var(--hue), 90%, 50%),
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+}
+
+.switch__input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 45%;
+  height: 90%;
+  border-radius: 50%;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.05em 0.05em 0.05em hsla(var(--hue), 90%, 10%, 0.1);
+  transition: transform var(--trans-dur) var(--trans-timing),
+    background-color var(--trans-dur) var(--trans-timing);
+  z-index: 2;
+}
+
+.switch__input:checked {
+  background-color: hsl(290, 90%, 40%);
+}
+
+.switch__input:checked::after {
+  transform: translateX(111%);
+  background-color: hsl(0, 0%, 0%);
+}
+
+.switch__icon-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.switch__icon {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  transition: opacity var(--trans-dur) var(--trans-timing),
+    transform var(--trans-dur) var(--trans-timing);
+}
+
+.switch__icon--light {
+  order: 2;
+  transform-origin: center;
+}
+
+.switch__icon--dark {
+  order: 1;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.switch__input:checked ~ .switch__icon-wrapper .switch__icon--light {
+  opacity: 0;
+  transform: scale(0.75) rotate(-30deg);
+  transition-timing-function: var(--trans-timing-in);
+}
+
+.switch__input:checked ~ .switch__icon-wrapper .switch__icon--dark {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  transition-delay: calc(var(--trans-dur) / 2);
+  transition-timing-function: var(--trans-timing-out);
+}

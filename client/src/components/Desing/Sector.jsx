@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Arrow from '../../assets/image/Arrow.svg';
+import ArrowDark from '../../assets/image/Arrow-dark.svg';
 import { Link } from 'react-scroll';
 import '../MainBody/SectionMain.css';
 import './Scroll.css'
+import { useTheme } from './Themes/ThemeContext';
 
 const StyledSector = styled.div`
   height: 100vh;
@@ -35,6 +37,7 @@ const BottomWrapper = styled.div`
 const Sector = ({ children, hideArrow, to, noHeight }) => {
   const validChildren = React.Children.toArray(children).filter(Boolean);
   const columns = validChildren.length >= 2 ? 2 : 1;
+  const { theme } = useTheme();
 
   return (
     <StyledSector style={{ height: noHeight ? '100%' : '90vh' }}>
@@ -47,7 +50,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
           <Link to={to} smooth={true} duration={500}>
             <img
               className="arrow"
-              src={Arrow}
+              src={theme === 'dark' ? ArrowDark : Arrow}
               alt="Клацай вниз"
               style={{ display: 'block' }}
             />

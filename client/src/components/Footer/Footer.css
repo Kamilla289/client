@@ -1,7 +1,6 @@
 .line {
   background-color: darkgray;
   height: 1px;
-  margin-top: 8rem;
 }
 
 .footer {
@@ -21,6 +20,12 @@
   filter: blur(50px);
   transform: scale(1.2);
   z-index: -10000;
+}
+
+.dark .blur-image {
+  filter: blur(50px);
+  opacity: 0.2;
+  transform: scale(1.2);
 }
 
 address,
@@ -44,6 +49,11 @@ address,
   font-size: 14px;
 }
 
+.dark .copyright,
+.dark .design {
+  color: #fae3ff;
+}
+
 .copyright {
   margin-top: 23px;
   margin-bottom: 13px;
@@ -54,6 +64,10 @@ address,
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 13px;
+}
+
+.dark .social-title {
+  color: #ceff93;
 }
 
 .social-icons {

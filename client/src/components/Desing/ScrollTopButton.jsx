@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ArrowUp from '../../assets/image/ArrowUp.svg';
+import ArrowUpDark from '../../assets/image/ArrowUp-dark.svg';
 import './Scroll.css';
 import { Link } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
+import { useTheme } from './Themes/ThemeContext';
 
 const ScrollTopButton = () => {
   const [show, setShow] = useState(false);
   const location = useLocation();
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (location.pathname !== '/') return;
@@ -25,7 +28,7 @@ const ScrollTopButton = () => {
 
   return (
     <Link to='main' smooth={true} duration={500}>
-      <img className='arrow-up' src={ArrowUp} alt="Клацай вверх" />
+      <img className='arrow-up' src={theme === 'dark' ? ArrowUpDark : ArrowUp} alt="Клацай вверх" />
     </Link>
   );
 };

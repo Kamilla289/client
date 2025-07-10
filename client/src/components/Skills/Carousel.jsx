@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Sector from '../Desing/Sector';
 import ArrowN from '../../assets/image/slider/next-arrow.png';
+import ArrowNDark from '../../assets/image/slider/next-arrow-dark.png';
+import { useTheme } from '../Desing/Themes/ThemeContext';
 import ArrowP from '../../assets/image/slider/prev-arrow.png';
+import ArrowPDark from '../../assets/image/slider/prev-arrow-dark.png';
 import Html from '../../assets/image/slider/html.png'
 import JS from '../../assets/image/slider/js.png'
 import Git from '../../assets/image/slider/git.png'
@@ -137,6 +140,8 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const { theme } = useTheme();
+
   return (
     <Element name='skill' className='main-mraz'>
       <Sector>
@@ -144,7 +149,7 @@ const Carousel = () => {
           <h2 className='tech-title'>MY STACK TECHNOLOGY</h2>
           <div className="slider-main">
             <button onClick={handlePrev} className="slider-prev">
-              <img src={ArrowP} alt="Previous" className="prev" />
+              <img src={theme === 'dark' ? ArrowPDark : ArrowP} alt="Previous" className="prev" />
             </button>
             <div key={index} className={`slider-block ${fade ? 'fadeIn' : 'fadeOut'}`}>
               <div className="mraz">
@@ -165,7 +170,7 @@ const Carousel = () => {
               </div>
             </div>
             <button onClick={handleNext} className="slider-next">
-              <img src={ArrowN} alt="Next" className="next" />
+              <img src={theme === 'dark' ? ArrowNDark : ArrowN} alt="Next" className="next" />
             </button>
           </div>
         </div>

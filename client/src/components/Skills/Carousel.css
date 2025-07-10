@@ -48,6 +48,10 @@
   position: relative;
 }
 
+.dark .slider-block {
+  background-color: #9b66ca;
+}
+
 .white-back {
   filter: blur(80px);
   opacity: 0.6;
@@ -78,6 +82,10 @@
   z-index: 10;
 }
 
+.dark .right-description {
+  background-color: #3a1652;
+}
+
 .slider-title {
   font-weight: 900;
   color: #236383;
@@ -91,6 +99,14 @@
   text-align: center;
   margin-top: 41px;
   margin-bottom: 41px;
+}
+
+.dark .slider-text {
+  color: #b8e4fa;
+}
+
+.dark .slider-title {
+  color: #56c7ff;
 }
 
 .progress-fill {

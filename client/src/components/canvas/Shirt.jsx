@@ -29,7 +29,7 @@ const Shirt = () => {
         material={materials.lambert1}
         material-roughness={1}
         dispose={null}
-        position={[-0.4, 0, 0]}
+        position={[-0.4, 0.05, 0]}
       >
         {snap.isFullTexture && (
           <Decal

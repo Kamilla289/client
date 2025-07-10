@@ -7,6 +7,7 @@ import BasicModal from '../Desing/ModalPolicy'
 import './Contact.css'
 import { Element } from 'react-scroll'
 import message from '../../assets/image/contactsImage/message.svg'
+import { useTheme } from '../Desing/Themes/ThemeContext'
 
 const Contacts = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -65,6 +66,8 @@ const Contacts = () => {
     })
   }
 
+  const { theme } = useTheme();
+
   return (
     <Element name='contacts' id='contacts' className='main-mraz'>
       <Sector noHeight>
@@ -85,8 +88,8 @@ const Contacts = () => {
               <label class="custom-checkbox">
                 <input className='checkbox' disabled={!allFields} checked={isChecked} onChange={handleCheckboxChange} type="checkbox" />
                 <span className="checkbox-box">
-                  <svg style={{ display: isChecked ? 'block' : 'none' }} className="checkmark" width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.50098 13.9995L13.6206 29.5818C14.5068 30.7213 16.2715 30.5752 16.9583 29.3056L32.001 1.49951" stroke="#B6FF5C" stroke-width="3" stroke-linecap="round" />
+                  <svg style={{ display: isChecked ? 'block' : 'none' }} className="checkmark" width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.50098 13.9995L13.6206 29.5818C14.5068 30.7213 16.2715 30.5752 16.9583 29.3056L32.001 1.49951" stroke={theme === 'dark' ? "#a500bb" : "#B6FF5C"} stroke-width="3" stroke-linecap="round" />
                   </svg>
                 </span>
               </label>
