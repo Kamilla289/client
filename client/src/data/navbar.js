@@ -17,7 +17,7 @@ const navbar = [
   {
     id: 4,
     name: 'Этапы работы',
-    path: 'work'
+    path: 'steps'
   },
   {
     id: 5,

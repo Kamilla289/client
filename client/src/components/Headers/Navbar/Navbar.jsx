@@ -103,8 +103,8 @@ const Navbar = () => {
       >
         <defs>
           <linearGradient id="customGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#CEFF93" />
-            <stop offset="100%" stopColor="#CEFF93" />
+            <stop offset="0%" stopColor="#d5fda3ff" />
+            <stop offset="100%" stopColor="#d5fda3ff" />
           </linearGradient>
 
           <linearGradient id="customGradientDark" x1="0%" y1="0%" x2="0%" y2="100%">

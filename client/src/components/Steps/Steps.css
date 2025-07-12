@@ -1,0 +1,65 @@
+.steps-container {
+  width: 1076px;
+  height: 735px;
+}
+
+.block-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.steps-title {
+  font-size: 80px;
+  position: absolute;
+  top: 19%;
+  left: 33%;
+}
+
+.animated-line {
+  position: absolute;
+  top: 15%;
+}
+
+.step-item {
+  position: absolute;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.step-figma {
+  top: 150;
+  left: 200;
+}
+
+.step-layout {
+  top: 39%;
+  left: 61.5%;
+}
+
+.step-interactive {
+  top: 70%;
+  right: 23.5%;
+}
+
+.step-pixel {
+  top: 60%;
+  left: 42.5%;
+}
+
+.step-test {
+  top: 58%;
+  left: 21%;
+}
+
+.step-release {
+  top: 80%;
+  left: 25%;
+}
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -144,7 +144,7 @@ const Carousel = () => {
 
   return (
     <Element name='skill' className='main-mraz'>
-      <Sector>
+      <Sector to='steps'>
         <div className="slider">
           <h2 className='tech-title'>MY STACK TECHNOLOGY</h2>
           <div className="slider-main">

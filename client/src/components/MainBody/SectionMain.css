@@ -12,6 +12,7 @@ h1 {
 
 .main-block {
   margin-top: 150px;
+  width: 810px;
 }
 
 .text-block {
@@ -44,4 +45,12 @@ h1 {
 }
 .dark .text-block {
   color: #a3e0ff;
+}
+
+.list-description {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.473);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
 }

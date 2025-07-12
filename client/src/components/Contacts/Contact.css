@@ -101,6 +101,7 @@
   width: 45px;
   height: 45px;
   background-color: #fff;
+  border: 1px solid #ffafc1;
   border-radius: 13px;
   cursor: pointer;
   display: flex;
@@ -119,4 +120,13 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #ceff93 inset; /* чтобы перекрыть автозаполнение фоном */
   -webkit-box-shadow: 0 0 0px 1000px #f0ffde inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.contacts-block-input {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.473);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  max-width: 710px;
 }

@@ -6,6 +6,7 @@ import Carousel from '../Skills/Carousel';
 import Footer from '../Footer/Footer';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
+import Steps from '../Steps/Steps';
 
 const Home = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const Home = () => {
       <SectionMain />
       <SectionAbout />
       <Carousel />
+      <Steps />
       <Contacts />
       <Footer />
     </div>

@@ -35,9 +35,10 @@
 
 .image-ability {
   position: absolute;
-  right: 0;
+  width: 15%;
+  right: 40px;
   bottom: 0;
-  top: 14.0625rem;
+  top: 12.061rem;
   animation: swing 1s infinite alternate ease;
 }
 

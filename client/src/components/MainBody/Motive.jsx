@@ -8,16 +8,18 @@ const Motive = () => {
     <div className="main-block">
       <div className="description">
         <h1>Причина, по которой вы здесь</h1>
-        {motive.map((item) => {
-          return (
-            <div key={item.id} className="list">
-              <img src={ListIcon} alt={item.text} />
-              <div className="text-block">
-                {item.text}
+        <div className="list-description">
+          {motive.map((item) => {
+            return (
+              <div key={item.id} className="list">
+                <img src={ListIcon} alt={item.text} />
+                <div className="text-block">
+                  {item.text}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   )
