@@ -60,7 +60,7 @@ const Navbar = () => {
                     to={link.path}
                     smooth={true}
                     duration={800}
-                    offset={-20}
+                    offset={link.path === 'contacts' ? -90 : -20}
                     spy={true}
                     activeClass=""
                   >
