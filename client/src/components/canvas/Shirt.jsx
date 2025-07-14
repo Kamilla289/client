@@ -1,4 +1,5 @@
 import React from 'react';
+import * as THREE from 'three';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 import { useFrame } from '@react-three/fiber';
@@ -9,18 +10,26 @@ const Shirt = () => {
   const snap = useSnapshot(state);
   const { nodes, materials } = useGLTF('../../../public/shirt_baked.glb');
 
+  // Загружаем текстуры
   const logoTexture = useTexture(snap.logoDecal);
-  if (logoTexture) {
-    logoTexture.anisotropy = 16;
-    logoTexture.needsUpdate = true;
-  }
   const fullTexture = useTexture(snap.fullDecal);
 
+  // Устанавливаем параметры для обеих текстур
+  [logoTexture, fullTexture].forEach((texture) => {
+    if (texture) {
+      texture.anisotropy = 16;
+      texture.needsUpdate = true;
+      texture.wrapS = THREE.ClampToEdgeWrapping;
+      texture.wrapT = THREE.ClampToEdgeWrapping;
+    }
+  });
+
+  // Обновление цвета через maath easing
   useFrame((state, delta) => {
     easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
 
-  const stateString = JSON.stringify(snap);
+  const stateString = JSON.stringify(snap); // ключ для рендера
 
   return (
     <group key={stateString}>
@@ -37,6 +46,10 @@ const Shirt = () => {
             rotation={[0, 0, 0]}
             scale={1}
             map={fullTexture}
+            depthTest={true}
+            depthWrite={true}
+            polygonOffset
+            polygonOffsetFactor={-1}
           />
         )}
         {snap.isLogoTexture && (
@@ -47,6 +60,9 @@ const Shirt = () => {
             map={logoTexture}
             depthTest={false}
             depthWrite={true}
+            transparent={true}
+            polygonOffset
+            polygonOffsetFactor={-10}
           />
         )}
       </mesh>
