@@ -10,7 +10,7 @@ import { useTheme } from './Themes/ThemeContext';
 const StyledSector = styled.div`
   height: 100vh;
   width:73%;
-  padding: 2rem 0;
+  padding: 30px 0;
   color: white;
   display: grid;
   grid-template-rows: 1fr auto;
@@ -40,7 +40,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
   const { theme } = useTheme();
 
   return (
-    <StyledSector style={{ height: noHeight ? '100%' : '90vh' }}>
+    <StyledSector style={{ height: noHeight ? '100%' : '100vh' }}>
       <ContentWrapper columns={columns}>
         {validChildren}
       </ContentWrapper>

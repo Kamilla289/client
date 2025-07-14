@@ -69,7 +69,7 @@
 
 .filter-tab-btn-icon {
   object-fit: contain;
-  height: 80%;
+  height: 100%;
   z-index: 15;
   opacity: 1;
 }
@@ -131,6 +131,7 @@
 
 .filepicker-text {
   margin-top: 2rem;
+  text-align: center;
   color: #9ca3af;
   font-size: 14px;
 }

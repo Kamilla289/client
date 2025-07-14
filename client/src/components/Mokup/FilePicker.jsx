@@ -7,12 +7,15 @@ const FilePicker = ({ file, setFile, readFile }) => {
     <div className='filepicker-container'>
       <div className="filepicker">
         <input type="file"
-          id="file-upload" accept='image/*' onChange={(e) => setFile(e.target.files[0])} style={{ display: 'none' }} />
+          id="file-upload"
+          accept='image/*'
+          onChange={(e) => setFile(e.target.files[0])}
+          style={{ display: 'none' }} />
         <label htmlFor="file-upload" className='filepicker-label'>
           Загрузить файл
         </label>
         <p className='filepicker-text'>
-          {file === '' ? 'No file selected' : file.name}
+          {file === '' ? 'Нет выбранных файлов' : file.name}
         </p>
       </div>
 
