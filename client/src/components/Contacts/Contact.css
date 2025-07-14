@@ -130,3 +130,9 @@ input:-webkit-autofill {
   border-radius: 30px;
   max-width: 710px;
 }
+
+.dark .contacts-block-input {
+  background: rgba(255, 255, 255, 0.137);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

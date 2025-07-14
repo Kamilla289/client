@@ -4,23 +4,26 @@ import state from '../../data/mokupData'
 import './Mockup.css'
 
 const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
-
   const snap = useSnapshot(state)
 
-  const activeStyle = isFilterTab && isActiveTab
-    ? { backgroundColor: snap.color, opacity: 0.5 }
-    : { backgroundColor: 'transparent', opacity: 1 }
+  const activeStyle = isFilterTab
+    ? {
+      backgroundColor: isActiveTab ? snap.color : 'transparent',
+      opacity: isActiveTab ? 1 : 0.5
+    }
+    : {};
 
   return (
     <div
-      key={tab.name}
       className={`tab-btn ${isFilterTab ? 'filter-tab-btn' : ''}`}
       onClick={handleClick}
-      style={activeStyle}>
+      style={activeStyle}
+    >
       <img
         src={tab.icon}
         alt={tab.name}
-        className={`${isFilterTab ? 'tab-btn-icon' : 'filter-tab-btn-icon'}`} />
+        className={`${isFilterTab ? 'filter-tab-btn-icon' : 'tab-btn-icon'}`}
+      />
     </div>
   )
 }

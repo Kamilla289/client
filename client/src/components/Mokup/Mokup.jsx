@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 import config from '../../config/config';
@@ -8,12 +8,13 @@ import { downloadCanvasToImage, reader } from '../../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../../config/constants';
 import { fadeAnimation, slideAnimation } from '../../config/motion';
 import { AIPicker, ColorPicker, FilePicker, Tab } from './index';
-import './Mockup.css'
+import './Mockup.css';
 import { Link } from 'react-router-dom';
 import CanvasModel from '../canvas';
 
 const Mokup = () => {
   const snap = useSnapshot(state);
+
   const [file, setFile] = useState('');
   const [activeEditorTab, setActiveEditorTab] = useState('');
   const [activeFilterTab, setActiveFilterTab] = useState({
@@ -21,15 +22,39 @@ const Mokup = () => {
     stylishShirt: false,
   });
 
+  const editorRef = useRef(null);
+
+  // Закрытие редактора по клику вне блока
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        editorRef.current &&
+        !editorRef.current.contains(event.target)
+      ) {
+        setActiveEditorTab('');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case 'colorpicker':
         return <ColorPicker />;
       case 'filepicker':
-        return <FilePicker
-          file={file}
-          setFile={setFile}
-          readFile={readFile} />;
+        return (
+          <FilePicker
+            file={file}
+            setFile={setFile}
+            readFile={readFile}
+          />
+        );
+      case 'aipicker':
+        return <AIPicker />;
       default:
         return null;
     }
@@ -55,41 +80,56 @@ const Mokup = () => {
       default:
         state.isLogoTexture = true;
         state.isFullTexture = false;
+        break;
     }
+
+    setActiveFilterTab((prevState) => ({
+      ...prevState,
+      [tabName]: !prevState[tabName],
+    }));
   };
 
   const readFile = (type) => {
-    reader(file)
-      .then((result) => {
-        handleDecals(type, result);
-        setActiveEditorTab('');
-      });
+    reader(file).then((result) => {
+      handleDecals(type, result);
+      setActiveEditorTab('');
+    });
   };
 
   return (
     <AnimatePresence>
       {snap.intro && (
         <>
-          <motion.div key='custom' className='window-mockup' {...slideAnimation('left')}>
+          <motion.div key="custom" className="window-mockup" {...slideAnimation('left')}>
             <div className="mockup-container">
-              <div className="editortabs-container tabs">
+              <div className="editortabs-container tabs" ref={editorRef}>
                 {EditorTabs.map((tab) => (
-                  <Tab key={tab.name} tab={tab} handleClick={() => setActiveEditorTab(tab.name)} />
+                  <Tab
+                    key={tab.name}
+                    tab={tab}
+                    handleClick={() => setActiveEditorTab(tab.name)}
+                  />
                 ))}
                 {generateTabContent()}
               </div>
             </div>
           </motion.div>
 
-          <motion.div className='go-back' {...fadeAnimation}>
-            <Link to={'/abilities'}>
-              <button className='button-gradient button-go-back' >Назад</button>
+          <motion.div className="go-back" {...fadeAnimation}>
+            <Link to="/abilities">
+              <button className="button-gradient button-go-back">Назад</button>
             </Link>
           </motion.div>
 
-          <motion.div className='filtertabs-container' {...slideAnimation('up')}>
+          <motion.div className="filtertabs-container" {...slideAnimation('up')}>
             {FilterTabs.map((tab) => (
-              <Tab key={tab.name} tab={tab} isFilterTab isActiveTab='' handleClick={() => { }} />
+              <Tab
+                key={tab.name}
+                tab={tab}
+                isFilterTab
+                isActiveTab={activeFilterTab[tab.name]}
+                handleClick={() => handleActiveFilterTab(tab.name)}
+              />
             ))}
           </motion.div>
         </>

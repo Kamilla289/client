@@ -21,6 +21,12 @@
   border-radius: 30px;
 }
 
+.dark .about-me-description {
+  background: rgba(255, 255, 255, 0.137);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 h2 {
   font-size: 60px;
   font-weight: 800;
