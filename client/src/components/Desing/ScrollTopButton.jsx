@@ -28,7 +28,9 @@ const ScrollTopButton = () => {
 
   return (
     <Link to='main' smooth={true} duration={500}>
-      <img className='arrow-up' src={theme === 'dark' ? ArrowUpDark : ArrowUp} alt="Клацай вверх" />
+      <div className="arrow-up-container">
+        <img className='arrow-up' src={theme === 'dark' ? ArrowUpDark : ArrowUp} alt="Клацай вверх" />
+      </div>
     </Link>
   );
 };

@@ -114,15 +114,15 @@ const Navbar = () => {
           <path
             id="gentle-wave"
             d="M-160 44c30 0 
-              58-10 88-10s
-              58 10 88 10 
-              58-10 88-10 
-              58 10 88 10
+              58-5 88-5s
+              58 5 88 5 
+              58-5 88-5 
+              58 5 88 5
               v30h-352z"
           />
         </defs>
         <g className="parallax">
-          <use xlinkHref="#gentle-wave" x="50" y="-10" fill={theme === 'dark' ? 'url(#customGradientDark)' : 'url(#customGradient)'} />
+          <use xlinkHref="#gentle-wave" x="50" y="0" fill={theme === 'dark' ? 'url(#customGradientDark)' : 'url(#customGradient)'} />
         </g>
       </svg>
     </div>

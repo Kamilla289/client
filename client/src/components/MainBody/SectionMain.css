@@ -6,8 +6,9 @@ h1 {
   font-weight: 800;
   color: #ff6b8b;
   font-size: 96px;
-  margin-bottom: 31px;
+  margin-bottom: 3.75rem;
   width: 80%;
+  line-height: 1;
 }
 
 .main-block {
