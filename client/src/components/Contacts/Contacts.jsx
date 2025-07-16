@@ -54,17 +54,17 @@ const Contacts = () => {
     const phoneValue = inputSubmit[3] || '';
 
     if (!/^[А-Яа-яЁё\s\-]+$/.test(nameValue)) {
-      alert('вы долбаеб, это не кириллица');
+      alert('это не кириллица');
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-      alert('вы долбаеб, это не почта');
+      alert('это не почта');
       return;
     }
 
     if (!/^\+7 \(?\d{3}\)? \d{3} \d{2}-\d{2}$/.test(phoneValue)) {
-      alert('вы долбаеб, это не ваш телефон');
+      alert('это не ваш телефон');
       return;
     }
 
@@ -84,7 +84,7 @@ const Contacts = () => {
       setIsChecked(false);
     } catch (error) {
       console.error(error);
-      alert('пошел нахуй');
+      alert('не отправилось');
     }
   };
 
