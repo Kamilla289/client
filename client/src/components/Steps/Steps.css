@@ -47,10 +47,13 @@
 
 .steps-title {
   position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 3vw;
+  top: 5%;
+  left: 17%;
+  font-size: 80px;
+}
+
+.step-description {
+  color: #b6ff5c;
 }
 
 @keyframes drawPath {
