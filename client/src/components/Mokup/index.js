@@ -1,10 +1,10 @@
-import AIPicker from "./AIPicker";
+import Choose from "./Choose";
 import ColorPicker from "./ColorPicker";
 import FilePicker from "./FilePicker";
 import Tab from "./Tab";
 
 export {
-  AIPicker,
+  Choose,
   ColorPicker,
   FilePicker,
   Tab

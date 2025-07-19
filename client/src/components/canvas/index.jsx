@@ -8,7 +8,7 @@ import './index.css'; // Assuming you have some styles in index.css
 const CanvasModel = () => {
   return (
     <Canvas
-      style={{ height: '100vh' }}
+      style={{ height: '90vh' }}
       camera={{ position: [0, 0, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       className="canvas-model"

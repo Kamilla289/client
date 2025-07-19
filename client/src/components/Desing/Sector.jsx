@@ -47,7 +47,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
 
       {!hideArrow && to && (
         <BottomWrapper>
-          <Link to={to} smooth={true} duration={500}>
+          <Link to={to} smooth={true} duration={500} offset={to === 'contacts' ? -90 : -20}>
             <img
               className="arrow"
               src={theme === 'dark' ? ArrowDark : Arrow}

@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
-import config from '../../config/config';
 import state from '../../data/mokupData';
 import { download } from '../../assets/mokup';
 import { downloadCanvasToImage, reader } from '../../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../../config/constants';
 import { fadeAnimation, slideAnimation } from '../../config/motion';
-import { AIPicker, ColorPicker, FilePicker, Tab } from './index';
+import { Choose, ColorPicker, FilePicker, Tab } from './index';
 import './Mockup.css';
 import { Link } from 'react-router-dom';
 import CanvasModel from '../canvas';
@@ -53,8 +52,8 @@ const Mokup = () => {
             readFile={readFile}
           />
         );
-      case 'aipicker':
-        return <AIPicker />;
+      case 'choose':
+        return <Choose />;
       default:
         return null;
     }
