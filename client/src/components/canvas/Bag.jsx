@@ -7,28 +7,33 @@ import { useSnapshot } from 'valtio';
 import state from '../../data/mokupData';
 import useDecalTextures from '../../config/useDecalTextures';
 
-const Shirt = () => {
+const Bag = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('/Hudi_02.glb');
+  const { nodes, materials } = useGLTF('/Bag_02.glb');
   const { logoTexture, fullTexture } = useDecalTextures();
 
-
-
+  // Список материалов для плавной окраски
+  const materialKeys = ['Vitrina-066'];
   useFrame((_, delta) => {
-    easing.dampC(materials['Vitrina-038'].color, snap.color, 0.25, delta);
+    materialKeys.forEach((key) => {
+      if (materials[key]) {
+        easing.dampC(materials[key].color, snap.color, 0.25, delta);
+      }
+    });
   });
 
   const stateString = JSON.stringify(snap);
 
   return (
     <group key={stateString}>
+
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes['Vitrina-033'].geometry}
-        material={materials['Vitrina-038']}
+        geometry={nodes['Vitrina-174'].geometry}
+        material={materials['Vitrina-066']}
         dispose={null}
-        position={[-0.4, 0.05, 0]}
+        position={[-0.4, -0.05, 0]}
       >
         {snap.isFullTexture && (
           <Decal
@@ -46,14 +51,12 @@ const Shirt = () => {
         )}
         {snap.isLogoTexture && (
           <Decal
-            position={[-0.11, 0.05, 0.03]}
+            position={[0, 0, 0.1]}
             rotation={[0, 0, 0]}
-            scale={0.1}
+            scale={0.15}
             map={logoTexture}
-            depthTest={true}
-            polygonOffset
-            polygonOffsetFactor={-10}
-            transparent
+            depthWrite={true}
+            polygonOffsetFactor={-1}
             side={THREE.FrontSide}
           />
         )}
@@ -62,4 +65,4 @@ const Shirt = () => {
   );
 };
 
-export default Shirt;
+export default Bag;

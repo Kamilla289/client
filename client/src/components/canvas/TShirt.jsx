@@ -1,21 +1,20 @@
 import React from 'react';
-import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { Decal, useGLTF } from '@react-three/drei';
+import { useGLTF, Decal } from '@react-three/drei';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
+import * as THREE from 'three';
+
 import state from '../../data/mokupData';
 import useDecalTextures from '../../config/useDecalTextures';
 
-const Shirt = () => {
+const TShirt = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('/Hudi_02.glb');
+  const { nodes, materials } = useGLTF('/shirt_baked.glb');
   const { logoTexture, fullTexture } = useDecalTextures();
 
-
-
   useFrame((_, delta) => {
-    easing.dampC(materials['Vitrina-038'].color, snap.color, 0.25, delta);
+    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
 
   const stateString = JSON.stringify(snap);
@@ -23,38 +22,35 @@ const Shirt = () => {
   return (
     <group key={stateString}>
       <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes['Vitrina-033'].geometry}
-        material={materials['Vitrina-038']}
+        geometry={nodes.T_Shirt_male.geometry}
+        material={materials.lambert1}
+        material-roughness={1}
         dispose={null}
         position={[-0.4, 0.05, 0]}
       >
-        {snap.isFullTexture && (
+        {snap.isFullTexture && fullTexture && (
           <Decal
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
             scale={1}
             map={fullTexture}
-            depthTest={true}
-            depthWrite={true}
+            depthTest
+            depthWrite
             polygonOffset
             polygonOffsetFactor={-1}
-            transparent={true}
-            side={THREE.FrontSide}
           />
         )}
-        {snap.isLogoTexture && (
+        {snap.isLogoTexture && logoTexture && (
           <Decal
-            position={[-0.11, 0.05, 0.03]}
+            position={[0, 0.04, 0.15]}
             rotation={[0, 0, 0]}
-            scale={0.1}
+            scale={0.15}
             map={logoTexture}
-            depthTest={true}
+            depthTest={false}
+            depthWrite
+            transparent
             polygonOffset
             polygonOffsetFactor={-10}
-            transparent
-            side={THREE.FrontSide}
           />
         )}
       </mesh>
@@ -62,4 +58,4 @@ const Shirt = () => {
   );
 };
 
-export default Shirt;
+export default TShirt;

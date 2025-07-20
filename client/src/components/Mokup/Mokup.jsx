@@ -10,6 +10,7 @@ import { Choose, ColorPicker, FilePicker, Tab } from './index';
 import './Mockup.css';
 import { Link } from 'react-router-dom';
 import CanvasModel from '../canvas';
+import { a } from '@react-spring/three';
 
 const Mokup = () => {
   const snap = useSnapshot(state);
@@ -20,8 +21,11 @@ const Mokup = () => {
     logoShirt: true,
     stylishShirt: false,
   });
+  const [activeModel, setActiveModel] = useState('tshirt');
 
   const editorRef = useRef(null);
+
+
 
   // Закрытие редактора по клику вне блока
   useEffect(() => {
@@ -53,7 +57,7 @@ const Mokup = () => {
           />
         );
       case 'choose':
-        return <Choose />;
+        return <Choose setActiveModel={setActiveModel} />;
       default:
         return null;
     }
@@ -134,7 +138,7 @@ const Mokup = () => {
         </>
       )}
 
-      <CanvasModel />
+      <CanvasModel modelName={activeModel} />
     </AnimatePresence>
   );
 };

@@ -1,4 +1,5 @@
 import { swatch, fileIcon, ai, logoShirt, stylishShirt } from "../assets/mokup";
+import * as THREE from 'three';
 
 export const EditorTabs = [
   {
@@ -36,3 +37,4 @@ export const DecalTypes = {
     filterTab: "stylishShirt",
   },
 };
+

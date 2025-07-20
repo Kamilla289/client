@@ -1,11 +1,31 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, Center } from '@react-three/drei';
+import TShirt from './TShirt';
+import Hoodie from './Hoodie';
+import Bag from './Bag';
 import Shirt from './Shirt';
+import Package from './Package';
 import CameraRig from './CameraRig';
-import './index.css'; // Assuming you have some styles in index.css
+import './index.css';
 
-const CanvasModel = () => {
+const CanvasModel = ({ modelName }) => {
+  const renderModel = () => {
+    switch (modelName) {
+      case 'tshirt':
+        return <TShirt />;
+      case 'hoodie':
+        return <Hoodie />;
+      case 'bag':
+        return <Bag />;
+      case 'shirt':
+        return <Shirt />;
+      case 'package':
+        return <Package />;
+      default:
+        return <TShirt />;
+    }
+  }
   return (
     <Canvas
       style={{ height: '90vh' }}
@@ -17,7 +37,7 @@ const CanvasModel = () => {
       <Environment preset="city" />
 
       <CameraRig>
-        <Shirt />
+        {renderModel()}
       </CameraRig>
     </Canvas>
   )

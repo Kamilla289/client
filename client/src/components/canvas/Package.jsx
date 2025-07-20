@@ -7,15 +7,13 @@ import { useSnapshot } from 'valtio';
 import state from '../../data/mokupData';
 import useDecalTextures from '../../config/useDecalTextures';
 
-const Shirt = () => {
+const Package = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('/Hudi_02.glb');
+  const { nodes, materials } = useGLTF('/Bag_01.glb');
   const { logoTexture, fullTexture } = useDecalTextures();
 
-
-
   useFrame((_, delta) => {
-    easing.dampC(materials['Vitrina-038'].color, snap.color, 0.25, delta);
+    easing.dampC(materials.Bag.color, snap.color, 0.25, delta);
   });
 
   const stateString = JSON.stringify(snap);
@@ -25,10 +23,10 @@ const Shirt = () => {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes['Vitrina-033'].geometry}
-        material={materials['Vitrina-038']}
+        geometry={nodes.Bag_1v.geometry}
+        material={materials.Bag}
         dispose={null}
-        position={[-0.4, 0.05, 0]}
+        position={[-0.4, 0, 0]}
       >
         {snap.isFullTexture && (
           <Decal
@@ -46,15 +44,14 @@ const Shirt = () => {
         )}
         {snap.isLogoTexture && (
           <Decal
-            position={[-0.11, 0.05, 0.03]}
+            position={[0, -0.1, 0.1]}
             rotation={[0, 0, 0]}
-            scale={0.1}
+            scale={0.2}
             map={logoTexture}
-            depthTest={true}
+            depthTest={false}
             polygonOffset
             polygonOffsetFactor={-10}
             transparent
-            side={THREE.FrontSide}
           />
         )}
       </mesh>
@@ -62,4 +59,4 @@ const Shirt = () => {
   );
 };
 
-export default Shirt;
+export default Package;
