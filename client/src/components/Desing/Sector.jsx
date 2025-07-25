@@ -20,7 +20,6 @@ const StyledSector = styled.div`
 const ContentWrapper = styled.div`
   display: grid;
   gap: 2rem;
-  align-items: center;
 
   ${({ columns }) =>
     columns === 2

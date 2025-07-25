@@ -127,11 +127,11 @@ const Mokup = () => {
           <motion.div className="filtertabs-container" {...slideAnimation('up')}>
             {FilterTabs.map((tab) => (
               <Tab
-                key={tab.name}
+                key={tab.nameFilter}
                 tab={tab}
                 isFilterTab
-                isActiveTab={activeFilterTab[tab.name]}
-                handleClick={() => handleActiveFilterTab(tab.name)}
+                isActiveTab={activeFilterTab[tab.nameFilter]}
+                handleClick={() => handleActiveFilterTab(tab.nameFilter)}
               />
             ))}
           </motion.div>

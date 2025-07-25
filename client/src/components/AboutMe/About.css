@@ -10,8 +10,8 @@
 }
 
 .about-me-description {
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 600;
   color: #333333;
 
   padding: 30px;
@@ -37,19 +37,12 @@ h2 {
   flex: 1;
 }
 
-.test5 {
-  flex: 1;
-  height: 60vh;
-}
-
 .slurry-about {
   height: 614px;
 }
 
 .block-about {
-  margin-left: 265px;
-  margin-top: auto;
-  margin-bottom: auto;
+  padding-top: 3.75rem;
 }
 
 .title-about {
@@ -58,6 +51,14 @@ h2 {
 
 .description-goal {
   margin-top: 45px;
+  font-weight: 300;
+}
+
+.motion-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .dark .about-me-description {

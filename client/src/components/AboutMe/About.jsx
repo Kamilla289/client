@@ -4,17 +4,18 @@ import { Element } from 'react-scroll'
 import './About.css'
 
 const About = () => {
-  const { title, text1, text2 } = aboutMe
+  const { description } = aboutMe
 
   return (
     <Element name='about' id='about' className="block-about-text" >
       <div >
         <div className='block-about'>
+          <h2 className='title-about'>{description.title}</h2>
           <div className="about-me-description">
-            <h2 className='title-about'>{title}</h2>
-            <p>{text1}</p>
-            <p className='description-goal'>{text2}</p>
+            <p>{description.text1}</p>
+            <p className='description-goal'>{description.text2}</p>
           </div>
+          <button className='button-gradient'>Читать далее...</button>
         </div>
       </div>
     </Element>
