@@ -5,9 +5,9 @@ import Header from './components/Headers/Header'
 import Ability from './components/Ability/Ability'
 import ScrollTopButton from './components/Desing/ScrollTopButton'
 import Mokup from './components/Mokup/Mokup'
-import CanvasModel from '../src/components/canvas'
 import { ThemeProvider } from './components/Desing/Themes/ThemeContext'
 import ToggleButton from './components/Desing/ButtonTheme/ButtonTheme'
+import PuzzleTest from './components/Puzzle/PuzzleTest'
 
 
 
@@ -21,6 +21,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/abilities' element={<Ability />} />
           <Route path='/mokup' element={<Mokup />} />
+          <Route path='/game' element={<PuzzleTest />} />
         </Routes>
         <ScrollTopButton />
         <ToggleButton />

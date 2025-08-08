@@ -89,8 +89,8 @@ const Contacts = () => {
   };
 
   const sendTelegram = async (message) => {
-    const token = 'тут_твой_токен';
-    const id = 'тут_твой_id';
+    const token = '7757955888:AAFeVcPbVtOIESbGRgvCC9_g6xnRhtsfTqk';
+    const id = '1692857185';
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
     await axios.post(url, {
       chat_id: id,

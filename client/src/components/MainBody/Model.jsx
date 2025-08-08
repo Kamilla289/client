@@ -49,7 +49,6 @@ const Model = ({ hovered, ...props }) => {
     return () => mixer.removeEventListener("finished", handleFinished);
   }, [actions, mixer]);
 
-  // 👉 теперь управляется через props
   useEffect(() => {
     if (hovered) {
       setCurrentAction("LookAt");
@@ -57,6 +56,30 @@ const Model = ({ hovered, ...props }) => {
       setCurrentAction("Return");
     }
   }, [hovered]);
+
+  // 🔧 Осветление и настройка теней на модели
+  useEffect(() => {
+    if (!materials?.EM3D_Base_Body30) return;
+
+    const mat = materials.EM3D_Base_Body30;
+
+    // Цвет немного ярче
+    mat.color = new THREE.Color(1.3, 1.3, 1.3);
+
+    // Уменьшаем влияние ambient occlusion (если есть)
+    if (mat.aoMap) {
+      mat.aoMapIntensity = 0.2;
+    }
+
+    // Лёгкое самосвечение — чтобы тени были мягче
+    mat.emissive = new THREE.Color(0x111111);
+    mat.emissiveIntensity = 0.4;
+
+    // Снижаем металличность и повышаем шероховатость — меньше бликов и глубоких теней
+    if ('roughness' in mat) mat.roughness = 0.9;
+    if ('metalness' in mat) mat.metalness = 0.1;
+
+  }, [materials]);
 
   return (
     <a.group
