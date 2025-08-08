@@ -9,8 +9,8 @@ import './Puzzle.css';
 const defaultImage = img;
 
 const PuzzleTest = () => {
-  const [text, setText] = useState('Еще не собрано');
   const [isSolved, setIsSolved] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const [prompt, setPrompt] = useState('');
   const [image, setImage] = useState(defaultImage);
@@ -40,7 +40,6 @@ const PuzzleTest = () => {
       imgLoader.onload = () => {
         setImage(imageUrl);
         setIsSolved(false);
-        setText('Еще не собрано');
       };
       imgLoader.onerror = () => {
         alert('Ошибка загрузки изображения. Попробуйте снова.');
@@ -53,11 +52,6 @@ const PuzzleTest = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleText = () => {
-    setText('Получилось!');
-    setIsSolved(true);
   };
 
   useEffect(() => {
@@ -97,6 +91,31 @@ const PuzzleTest = () => {
     }
   }, [isSolved]);
 
+  useEffect(() => {
+    const container = document.querySelector('.jigsaw-puzzle');
+    if (!container) return;
+
+    const observer = new MutationObserver(() => {
+      const solvedCount = container.querySelectorAll('.jigsaw-puzzle__piece--solved').length;
+      setProgress(solvedCount);
+      if (solvedCount === 16) {
+        setIsSolved(true)
+      }
+    });
+
+    observer.observe(container, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  const handleText = () => {
+    console.log('')
+  }
+
   return (
     <div className="puzzle-wrapper">
       <div className="description-puzzle">
@@ -115,6 +134,12 @@ const PuzzleTest = () => {
             placeholder="Введи свой запрос"
             value={prompt}
             onChange={e => setPrompt(e.target.value)}
+            onKeyDown={async (e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                await handleGenerate();
+              }
+            }}
           />
           <img
             src={Search}
@@ -131,8 +156,8 @@ const PuzzleTest = () => {
       <div className="puzzle-container">
         <JigsawPuzzle
           imageSrc={image}
-          rows={2}
-          columns={2}
+          rows={4}
+          columns={4}
           onSolved={handleText}
           className="jigsaw-puzzle"
         />
@@ -144,7 +169,7 @@ const PuzzleTest = () => {
         </Link>
         <div className="progress-puzzle">
           <h3 className="progress-title">СОБРАНО:</h3>
-          <div className="progress-number">{text}</div>
+          <div className="progress-number">{progress}/16</div>
         </div>
       </div>
     </div>
