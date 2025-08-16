@@ -91,6 +91,10 @@
   align-items: flex-start;
 }
 
+.text-policy {
+  cursor: pointer;
+}
+
 /* Скрываем стандартный чекбокс */
 .custom-checkbox input[type="checkbox"] {
   display: none;

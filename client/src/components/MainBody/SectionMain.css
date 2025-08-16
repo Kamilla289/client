@@ -1,5 +1,6 @@
 .main-block {
   flex: 1;
+  cursor: default;
 }
 
 h1 {

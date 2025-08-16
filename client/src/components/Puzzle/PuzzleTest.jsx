@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { JigsawPuzzle } from 'react-jigsaw-puzzle/lib';
 import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css';
 import img from '../../assets/image/pivo.jpg';
+import loadingIcon from '../../assets/image/puzzle/loading.svg'
 import Search from '../../assets/image/puzzle/searchIcon.svg';
 import { Link } from 'react-router-dom';
 import './Puzzle.css';
@@ -150,17 +151,26 @@ const PuzzleTest = () => {
           />
         </div>
 
-        {loading && <div className="loading-text">Генерация изображения...</div>}
+
       </div>
 
       <div className="puzzle-container">
-        <JigsawPuzzle
-          imageSrc={image}
-          rows={4}
-          columns={4}
-          onSolved={handleText}
-          className="jigsaw-puzzle"
-        />
+        {loading ? (
+          <div className="load-wrapper">
+            <div className="loader">
+              <img className="loader-icon" src={loadingIcon} alt="Иконка загрузки типо" />
+            </div>
+            <p>Нейросеть создает изображение, подождите...</p>
+          </div>
+        ) : (
+          < JigsawPuzzle
+            imageSrc={image}
+            rows={4}
+            columns={4}
+            onSolved={handleText}
+            className="jigsaw-puzzle"
+          />
+        )}
       </div>
 
       <div className="event-container">

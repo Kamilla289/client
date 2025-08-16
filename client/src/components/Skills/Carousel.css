@@ -117,3 +117,23 @@
 .tech-title {
   margin-bottom: 80px;
 }
+
+.prev,
+.next {
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 25px rgb(182, 255, 92));
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 25px rgba(182, 255, 92));
+}
+
+.prev:active,
+.next:active {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 4px rgba(182, 255, 92, 0.6));
+}

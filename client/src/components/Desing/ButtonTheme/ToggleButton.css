@@ -40,6 +40,7 @@ body {
   transition: background-color var(--trans-dur) var(--trans-timing);
   box-shadow: 0 0 0 0.125em hsla(var(--hue), 90%, 50%, 0),
     0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+  cursor: pointer;
 }
 
 .switch__input:focus-visible {

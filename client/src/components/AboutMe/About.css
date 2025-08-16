@@ -1,12 +1,14 @@
 .about-me-block {
   display: flex;
   justify-content: center;
+  cursor: default;
 }
 
 .about-me-description {
   font-size: 20px;
   font-weight: 600;
   color: #333333;
+  max-width: 650px;
 
   padding: 30px;
   background: rgba(255, 255, 255, 0.473);
@@ -29,10 +31,14 @@ h2 {
 
 .block-about {
   padding-top: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-about {
   margin-bottom: 67px;
+  max-width: 650px;
 }
 
 .description-goal {
@@ -84,4 +90,33 @@ h2 {
 
 .circle-image:hover img {
   transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+  /* Родитель сектора — флекс колонка */
+  .circle-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: auto !important; /* убираем фиксированную форму */
+    height: auto !important;
+  }
+
+  /* Убираем абсолюты, чтобы элементы не вылезали */
+  .circle-layer,
+  .circle-image {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  /* Картинки в ряд или по одной */
+  .circle-image img {
+    width: clamp(100px, 40vw, 190px) !important;
+    height: auto !important;
+    margin: 10px 0;
+  }
 }

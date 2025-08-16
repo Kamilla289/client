@@ -19,13 +19,26 @@ const StyledSector = styled.div`
 
 const ContentWrapper = styled.div`
   display: grid;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
 
-  ${({ columns }) =>
-    columns === 2
-      ? `grid-template-columns: 1fr 1fr;`
-      : `grid-template-columns: 1fr;`}
+  /* По пропсу columns — десктопная сетка */
+  grid-template-columns: ${({ columns }) =>
+    columns === 2 ? '1fr 1fr' : '1fr'};
+
+  /* Внутренние блоки могут слегка сжиматься, но сохраняют пропорции */
+  > * {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Мобильная версия — всегда одна колонка */
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    justify-items: center;   /* центрируем блоки */
+    text-align: center;      /* центрируем текст */
+  }
 `;
+
 
 const BottomWrapper = styled.div`
   display: flex;
