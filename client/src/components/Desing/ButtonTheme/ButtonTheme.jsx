@@ -2,10 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useTheme } from '../Themes/ThemeContext'
 import './ToggleButton.css' // сюда добавим все твои стили
+import { useMediaQuery } from 'react-responsive'
 
 const ToggleButton = () => {
   const { theme, toggleTheme } = useTheme()
   const [scale, setScale] = useState(1)
+  const isMobile = useMediaQuery({ maxWidth: 1200 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +22,11 @@ const ToggleButton = () => {
   }, [])
 
   return (
-    <label className="switch" style={{ transform: `scale(${scale})`, transformOrigin: 'left top' }}>
+    <label className={!isMobile ? 'switch' : 'switch-mobile'} style={
+      !isMobile
+        ? { transform: `scale(${scale})`, transformOrigin: 'left top' }
+        : {}
+    }>
       <input
         className="switch__input"
         type="checkbox"
@@ -30,14 +36,14 @@ const ToggleButton = () => {
       />
       <span className="switch__icon-wrapper">
         <svg className="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-          <g fill="none" stroke="#fff" strokeWidth="1" strokeLinecap="round">
+          <g fill="none" stroke="#fff" strokeWidth="1.2" strokeLinecap="round">
             <circle cx="6" cy="6" r="2" />
             <g strokeDasharray="1.5 1.5">
               {[...Array(8)].map((_, i) => (
                 <polyline
                   key={i}
                   points="6 10,6 11.5"
-                  transform={`rotate(${i * 45},6,6)`}
+                  transform={`rotate(${i * 45}, 6, 6)`}
                 />
               ))}
             </g>
@@ -49,7 +55,7 @@ const ToggleButton = () => {
           </g>
         </svg>
       </span>
-    </label>
+    </label >
   )
 }
 

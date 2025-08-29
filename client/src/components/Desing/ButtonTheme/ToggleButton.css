@@ -23,9 +23,29 @@ body {
   right: 40px;
   width: 120px;
   height: 60px;
-  z-index: 111000;
+  z-index: 100;
   cursor: pointer;
   margin: 0;
+}
+
+.switch-mobile {
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 40px;
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  margin: 0;
+}
+
+.switch-mobile .switch-mobile .switch__slider {
+  border-radius: 26px;
+}
+
+.switch-mobile .switch__icon {
+  width: 16px; /* уменьшенные иконки */
+  height: 16px;
 }
 
 .switch__input {
@@ -63,6 +83,11 @@ body {
   z-index: 2;
 }
 
+.switch-mobile .switch__input::after {
+  top: 2px;
+  left: 2px;
+}
+
 .switch__input:checked {
   background-color: hsl(290, 90%, 40%);
 }
@@ -86,6 +111,10 @@ body {
   z-index: 1;
 }
 
+.switch-mobile .switch__icon-wrapper {
+  padding: 0 15px;
+}
+
 .switch__icon {
   width: 30px;
   height: 30px;
@@ -97,6 +126,11 @@ body {
 .switch__icon--light {
   order: 2;
   transform-origin: center;
+}
+
+.switch-mobile .switch__icon--light {
+  width: 18px;
+  height: 18px;
 }
 
 .switch__icon--dark {

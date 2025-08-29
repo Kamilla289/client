@@ -20,6 +20,7 @@ const StyledSector = styled.div`
 const ContentWrapper = styled.div`
   display: grid;
   gap: clamp(1rem, 2vw, 2rem);
+  position: relative;
 
   /* По пропсу columns — десктопная сетка */
   grid-template-columns: ${({ columns }) =>
