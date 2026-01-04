@@ -6,6 +6,7 @@ import { Link } from 'react-scroll';
 import '../MainBody/SectionMain.css';
 import './Scroll.css'
 import { useTheme } from './Themes/ThemeContext';
+import { useMediaQuery } from 'react-responsive';
 
 const StyledSector = styled.div`
   height: 100vh;
@@ -51,6 +52,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
   const validChildren = React.Children.toArray(children).filter(Boolean);
   const columns = validChildren.length >= 2 ? 2 : 1;
   const { theme } = useTheme();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <StyledSector style={{ height: noHeight ? '100%' : '100vh' }}>
@@ -58,7 +60,7 @@ const Sector = ({ children, hideArrow, to, noHeight }) => {
         {validChildren}
       </ContentWrapper>
 
-      {!hideArrow && to && (
+      {!hideArrow && !isMobile && to && (
         <BottomWrapper>
           <Link to={to} smooth={true} duration={500} offset={to === 'contacts' ? -90 : -20}>
             <img

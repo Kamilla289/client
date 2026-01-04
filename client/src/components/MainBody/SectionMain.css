@@ -75,6 +75,10 @@ canvas {
   top: 20%;
 }
 
+#background-iridescence canvas {
+  top: 0;
+}
+
 @media (max-width: 480px) {
 }
 

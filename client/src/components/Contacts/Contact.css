@@ -55,12 +55,12 @@
 }
 
 .button-gradient {
-  width: 280px;
-  height: 65px;
+  width: clamp(200px, 50%, 600px);
+  height: clamp(50px, 6vw, 70px);
   background-color: #ceff93;
   border-radius: 13px;
   color: #333333;
-  font-size: 24px;
+  font-size: clamp(12px, 2vw, 30px);
   font-weight: 400;
   margin-top: 30px;
 }

@@ -41,8 +41,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1120px;
-  height: 460px;
+  width: 58vw;
+  height: clamp(300px, 40vw, 460px);
   background-color: #ffafc1;
   border-radius: 30px;
   position: relative;
@@ -55,10 +55,14 @@
 .white-back {
   filter: blur(80px);
   opacity: 0.6;
+  max-width: 100%;
+  width: clamp(100px, 16vw, 100%);
 }
 
 .carousel-image {
   position: absolute;
+  max-width: 100%;
+  width: clamp(100px, 15vw, 100%);
 }
 
 .mraz {
@@ -89,13 +93,13 @@
 .slider-title {
   font-weight: 900;
   color: #236383;
-  font-size: 55px;
+  font-size: clamp(24px, 55px, 56px);
 }
 
 .slider-text {
   font-weight: 300;
   color: #236383;
-  font-size: 20px;
+  font-size: clamp(14px, 14px, 20px);
   text-align: center;
   margin-top: 41px;
   margin-bottom: 41px;

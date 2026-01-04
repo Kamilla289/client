@@ -125,7 +125,7 @@
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 100%;
+  right: 100%;
   width: 100%;
   height: 100vh;
   color: white;
@@ -133,19 +133,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: left 0.65s ease;
+  transition: right 0.65s ease;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.mobile-menu.show,
-.mobile-link.show {
-  left: 0;
+.mobile-menu.show {
+  right: 0;
 }
 
 .mobile-menu ul {
   list-style: none;
   padding: 0;
-  text-align: right;
+  text-align: left;
 }
 
 .mobile-menu li {
@@ -153,8 +154,33 @@
   font-weight: 500;
   margin: 20px 0;
   cursor: pointer;
-  transition: color 0.3s ease;
-  transition: left 0.4s ease;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, color 0.3s ease;
+}
+
+.mobile-menu.show li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-menu.show li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.mobile-menu.show li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.mobile-menu.show li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.mobile-menu.show li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.mobile-menu.show li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.mobile-menu.show li:nth-child(6) {
+  transition-delay: 0.6s;
 }
 
 .mobile-menu li:hover {
@@ -171,7 +197,7 @@
 .contact-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 10px;
 }
 
